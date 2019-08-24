@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row class="mat-elevation-z3">
+      
+      <a mat-button href="/" class="menu">
+        <mat-icon>assessment</mat-icon>TKJ ARENA
+      </a>
+  
+      <button mat-button [matMenuTriggerFor]="menutabelas">Tabelas</button>
+      <mat-menu #menutabelas>
+        <a mat-menu-item href="/competitions">Competições</a>
+        <a mat-menu-item href="/places">Locais</a>
+        <a mat-menu-item href="/teams">Times</a>
+        <a mat-menu-item href="/players">Jogadores</a>
+      </mat-menu>
+  
+      <button mat-button (click)="login()">Entrar</button>
+  
+      <span class="fill-space"></span>
+  
+      <button mat-button [matMenuTriggerFor]="menulogin">
+        <mat-icon class="example-icon">account_circle</mat-icon>
+        {{ logged_user }}</button>
+      <mat-menu  #menulogin>
+        <a mat-menu-item href="/profile">Perfil</a>
+        <a mat-menu-item (click)="logout()">Sair</a>
+      </mat-menu>
+  
+    </mat-toolbar-row>
+  </mat-toolbar>
