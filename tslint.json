@@ -13,11 +13,13 @@
       true,
       "attribute",
       "app",
+      "tkj",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
+      "tkj",
       "app",
       "kebab-case"
     ],
@@ -28,7 +30,7 @@
     "interface-name": false,
     "max-classes-per-file": false,
     "max-line-length": [
-      true,
+      true, 
       140
     ],
     "member-access": false,

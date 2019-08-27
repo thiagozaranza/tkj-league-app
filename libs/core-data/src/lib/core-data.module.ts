@@ -7,7 +7,7 @@ import { StateModule } from './state/state.module';
 
 @NgModule({
   providers: [
-    TeamsService,
+    TeamsService
   ],
   imports: [
     CommonModule,

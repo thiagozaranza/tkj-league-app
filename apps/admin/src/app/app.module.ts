@@ -8,6 +8,11 @@ import { PagesModule } from './pages/pages.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TeamsModule } from './teams/teams.module';
+import { NxModule } from '@nrwl/nx';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoreDataModule } from 'libs/core-data/src';
+import { MaterialModule } from 'libs/material/src';
 
 @NgModule({
   declarations: [
@@ -16,9 +21,15 @@ import { TeamsModule } from './teams/teams.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
+    CoreDataModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    LayoutModule, 
     PagesModule,
     TeamsModule,
+    MaterialModule,
+    NxModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],

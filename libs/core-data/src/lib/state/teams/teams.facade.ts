@@ -5,11 +5,10 @@ import { filter } from 'rxjs/operators';
 import { TeamsActionTypes } from './teams.actions';
 import * as TeamsActions from './teams.actions';
 import { TeamsState } from './teams.reducer';
-import { selectCurrentTeam, selectAllTeams } from '..';
+import { selectCurrentTeam, selectAllTeams } from '../../state';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'root' })
 export class TeamsFacade {
   allTeams$ = this.store.pipe(select(selectAllTeams));
   currentTeam$ = this.store.pipe(select(selectCurrentTeam));

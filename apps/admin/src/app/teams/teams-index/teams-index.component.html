@@ -1,1 +1,5 @@
-<p>teams-index works!</p>
+<app-teams-list
+    [teams]="teams$ | async"
+    (selected)="selectTeam($event)"
+    (deleted)="deleteTeam($event)">
+</app-teams-list>
