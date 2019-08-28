@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Team } from 'libs/core-data/src/lib/teams/team.model';
-import { TeamsFacade } from 'libs/core-data/src/lib/state/teams/teams.facade';
-
+import { Team, TeamsFacade } from 'libs/core-data/src';
 
 
 @Component({
@@ -11,14 +9,13 @@ import { TeamsFacade } from 'libs/core-data/src/lib/state/teams/teams.facade';
   styleUrls: ['./teams-index.component.scss']
 })
 export class TeamsIndexComponent implements OnInit {
-  teams$: Observable<Team[]> ;
-  currentTeam$: Observable<Team> ;
+  teams$: Observable<Team[]> = this.teamsFacade.allTeams$;
+  currentTeam$: Observable<Team> = this.teamsFacade.currentTeam$;
 
   constructor(
-    public teamsFacade: TeamsFacade,
+    private teamsFacade: TeamsFacade,
   ) { 
-    this.teams$ = teamsFacade.allTeams$
-    this.currentTeam$= teamsFacade.currentTeam$
+
   }
 
   ngOnInit() {

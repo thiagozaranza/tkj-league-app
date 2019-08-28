@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -23,7 +23,7 @@
         "apps/admin/src/environments/*"
       ],
       "@tkj/core-data": [
-        "libs/core-data/src/index.ts"
+        "libs/core-data/src/_index.ts"
       ],
       "@tkj/material": [
         "libs/material/src/index.ts"

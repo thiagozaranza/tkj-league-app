@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Team } from 'libs/core-data/src/lib/teams/team.model';
+import { Team } from 'libs/core-data/src';
 
 @Component({
   selector: 'app-teams-list',

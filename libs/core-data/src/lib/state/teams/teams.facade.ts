@@ -7,7 +7,6 @@ import * as TeamsActions from './teams.actions';
 import { TeamsState } from './teams.reducer';
 import { selectCurrentTeam, selectAllTeams } from '../../state';
 
-// @Injectable({ providedIn: 'root' })
 @Injectable({ providedIn: 'root' })
 export class TeamsFacade {
   allTeams$ = this.store.pipe(select(selectAllTeams));
