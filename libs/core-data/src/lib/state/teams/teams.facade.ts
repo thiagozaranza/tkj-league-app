@@ -5,7 +5,7 @@ import { filter } from 'rxjs/operators';
 import { TeamsActionTypes } from './teams.actions';
 import * as TeamsActions from './teams.actions';
 import { TeamsState } from './teams.reducer';
-import { selectCurrentTeam, selectAllTeams } from '../../state';
+import { selectAllTeams, selectCurrentTeam } from './teams.selectors';
 
 @Injectable({ providedIn: 'root' })
 export class TeamsFacade {
