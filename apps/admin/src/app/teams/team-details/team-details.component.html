@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <span *ngIf="selectedTeam.id; else prompt">Editing {{originalName}}</span>
+            <ng-template #prompt>Create Team</ng-template>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <form (submit)="saved.emit(selectedTeam)">
+        <mat-card-content>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Name" [(ngModel)]="selectedTeam.name" type="text" name="name">
+        </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+        <button type="submit" mat-button color="primary">Save</button>
+        <button type="button" mat-button (click)="cancelled.emit(selectedTeam)">Cancel</button>
+        </mat-card-actions>
+    </form>
+</mat-card>
+  

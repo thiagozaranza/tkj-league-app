@@ -23,7 +23,7 @@ export class TeamsEffects
   @Effect()
   loadTeams$ = this.dataPersistence.fetch(TeamsActionTypes.LoadTeams, {
     run: (action: LoadTeams, state: TeamsState) => {
-      return this.teamsService.all().pipe(map((res: Team[]) => new TeamsLoaded(res)))
+      return this.teamsService.all().pipe(map((res: Team[]) => new TeamsLoaded(res['list'])))
     },
 
     onError: (action: LoadTeams, error) => {

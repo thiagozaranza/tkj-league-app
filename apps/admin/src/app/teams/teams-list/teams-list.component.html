@@ -1,14 +1,15 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-        <h1>Teams</h1>
+        Teams
         </mat-card-title>
     </mat-card-header>
+    <mat-divider></mat-divider>
     <mat-card-content>
         <mat-list>
             <mat-list-item *ngFor="let team of teams; trackBy: trackTeam" (click)="selected.emit(team)" class="record">
                 <h3 mat-line>{{team.name}}</h3>                
-                <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(team);$event.stopImmediatePropagation();">
+                <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(team); $event.stopImmediatePropagation();">
                 <mat-icon>close</mat-icon>
                 </button>
             </mat-list-item>
