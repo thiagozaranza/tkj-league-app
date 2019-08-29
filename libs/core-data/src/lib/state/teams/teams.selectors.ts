@@ -1,11 +1,6 @@
 import * as fromTeams from './../teams/teams.reducer';
-import { Team } from '../../teams/team.model';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-
-const emptyTeam: Team = {
-    id: null,
-    name: ''
-}
+import { emptyTeam } from './team.model';
 
 export const selectTeamsState = createFeatureSelector<fromTeams.TeamsState>('teams');
 

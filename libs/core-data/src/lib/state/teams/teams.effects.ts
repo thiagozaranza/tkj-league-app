@@ -3,8 +3,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
 import { map } from 'rxjs/operators';
 
-import { Team } from '../../teams/team.model';
-import { TeamsService } from '../../teams/teams.service';
+import { Team } from './team.model';
+import { TeamsService } from './teams.service';
 
 import {
   LoadTeams, TeamsLoaded,

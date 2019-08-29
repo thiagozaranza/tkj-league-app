@@ -1,7 +1,7 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import { TeamsActions, TeamsActionTypes } from './teams.actions';
-import { Team } from '../../teams/team.model';
+import { Team } from './team.model';
 
 /**
  * Interface to the part of the Store containing TeamsState
@@ -12,6 +12,7 @@ export interface TeamsState extends EntityState<Team> {
 }
 
 export const adapter: EntityAdapter<Team> = createEntityAdapter<Team>();
+
 export const initialState: TeamsState = adapter.getInitialState({
   // additional entity state properties
   selectedTeamId: null,
