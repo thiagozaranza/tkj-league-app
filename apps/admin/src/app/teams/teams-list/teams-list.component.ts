@@ -13,7 +13,7 @@ export class TeamsListComponent implements OnInit {
   @Output() deleted = new EventEmitter();
 
   trackTeam(index, team) {
-    return team.id;
+    return team._id;
   }
 
   ngOnInit() {

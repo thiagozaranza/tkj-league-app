@@ -52,10 +52,10 @@ export class TeamsService {
   }
 
   update(team: Team) {
-    return this.http.patch(this.getUrlForId(team.id), team);
+    return this.http.put(this.getUrlForId(team._id), { ...team, _method: 'PUT' });
   }
 
   delete(team: Team) {
-    return this.http.delete(this.getUrlForId(team.id));
+    return this.http.delete(this.getUrlForId(team._id));
   }
 }

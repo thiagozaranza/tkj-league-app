@@ -11,7 +11,9 @@ export interface TeamsState extends EntityState<Team> {
   selectedTeamId: string | null;
 }
 
-export const adapter: EntityAdapter<Team> = createEntityAdapter<Team>();
+export const adapter: EntityAdapter<Team> = createEntityAdapter<Team>({
+  selectId: (team: Team) => team._id,
+});
 
 export const initialState: TeamsState = adapter.getInitialState({
   // additional entity state properties
@@ -37,7 +39,7 @@ export function teamsReducer(state = initialState, action: TeamsActions): TeamsS
     }
 
     case TeamsActionTypes.TeamDeleted: {
-      return adapter.removeOne(action.payload.id, state);
+      return adapter.removeOne(action.payload._id, state);
     }
 
     default:

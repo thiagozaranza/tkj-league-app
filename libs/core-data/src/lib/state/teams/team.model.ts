@@ -1,9 +1,9 @@
 export interface Team {
-    id: string;
+    _id: string;
     name: string;
 }
 
 export const emptyTeam: Team = {
-    id: null,
+    _id: null,
     name: ''
 }

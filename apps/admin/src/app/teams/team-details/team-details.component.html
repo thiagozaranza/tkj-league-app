@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            <span *ngIf="selectedTeam.id; else prompt">Editing {{originalName}}</span>
+            <span *ngIf="selectedTeam._id; else prompt">Editing {{originalName}}</span>
             <ng-template #prompt>Create Team</ng-template>
         </mat-card-title>
     </mat-card-header>

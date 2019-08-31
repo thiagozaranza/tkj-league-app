@@ -29,11 +29,11 @@ export class TeamsIndexComponent implements OnInit {
   }
 
   selectTeam(team) {
-    this.teamsFacade.selectTeam(team.id);
+    this.teamsFacade.selectTeam(team._id);
   }
 
   saveTeam(team) {
-    if (!team.id) {
+    if (!team._id) {
       this.teamsFacade.addTeam(team);
     } else {
       this.teamsFacade.updateTeam(team);
