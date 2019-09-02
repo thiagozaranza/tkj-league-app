@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { TeamsService } from './state/teams/teams.service';
 import { StateModule } from './state/state.module';
+import { NotificationsService } from './notifications/notifications.service';
 
 @NgModule({
   providers: [
-    TeamsService
+    TeamsService,
+    NotificationsService
   ],
   imports: [
     CommonModule,

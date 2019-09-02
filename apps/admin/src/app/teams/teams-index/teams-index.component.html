@@ -1,17 +1,12 @@
 <div class="container">
-    <div class="col-50">
-        <app-teams-list
-            [teams]="teams$ | async"
-            (selected)="selectTeam($event)"
-            (deleted)="deleteTeam($event)">
-        </app-teams-list>
-    </div>
-
-    <div class="col-50">
-    <app-team-details
+    <app-teams-list class="item"
+        [teams]="teams$ | async"
+        (selected)="selectTeam($event)"
+        (deleted)="deleteTeam($event)">
+    </app-teams-list>
+    <app-team-details class="item"
         [team]="currentTeam$ | async"
         (saved)="saveTeam($event)"
         (cancelled)="resetCurrentTeam($event)">
     </app-team-details>
-    </div>
 </div>

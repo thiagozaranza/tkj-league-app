@@ -4,6 +4,7 @@ import { of, throwError } from 'rxjs';
 import { switchMap, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Team } from './team.model';
+import { NotificationsService } from '../../notifications/notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class TeamsService {
   model = 'teams'
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private ns: NotificationsService
   ) { }
 
   getUrl() {
@@ -48,7 +50,19 @@ export class TeamsService {
   }
 
   create(team: Team) {
-    return this.http.post(this.getUrl(), team);
+    
+    let request$ = this.http.post(this.getUrl(), team);
+
+    request$.subscribe(
+      response => {
+        this.ns.emit('Created');
+      },
+      error => {
+        this.ns.emit('[ERRO] ' + error.error.message);
+      }
+    );
+
+    return request$;
   }
 
   update(team: Team) {

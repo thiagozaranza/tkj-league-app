@@ -18,7 +18,7 @@ import { TeamsState } from './teams.reducer';
 @Injectable({providedIn: 'root'})
 export class TeamsEffects 
 {
-  //@Effect() effect$ = this.actions$.ofType(TeamsActionTypes.TeamsAction);
+  // @Effect() effect$ = this.actions$.ofType(TeamsActionTypes.TeamsAction);
 
   @Effect()
   loadTeams$ = this.dataPersistence.fetch(TeamsActionTypes.LoadTeams, {
